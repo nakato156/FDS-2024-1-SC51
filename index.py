@@ -1,9 +1,28 @@
 import json
 from pathlib import Path
 
-json_ds = Path(__file__).parent / "src" / "datasets" / "comments_12961.json"
+path_json = Path(__file__).parent / "src" / "datasets"
+json_ds = path_json / "comments_12961.json"
 
 json_data = json.load(json_ds.open())
+
+def limpiar_datos():
+    for comments in json_data:
+        for comment in comments:
+            comment["text"] = comment["text"].replace("\"", "'")
+            comment["text"] = comment["text"].replace("\n", " ")
+            comment["text"] = comment["text"].replace("\t", " ").replace("  ", " ")
+
+
+    mitad = len(json_data)//2
+    m1 = json_data[:mitad]
+    m2 = json_data[mitad:]
+
+    with open(path_json / "comments_1.json", "w") as f:
+        json.dump(m1, f, indent=4)
+
+    with open(path_json / "comments_2.json", "w") as f:
+        json.dump(m2, f, indent=4)
 
 data = []
 total_comments = 0
@@ -35,7 +54,3 @@ for comentarios in data:
 
 json.dump(process, open("process_comments.json", "w"), indent=4)
 print(len(json_data), len(data), total_comments)
-
-[x for x in range(10)]
-
-{k:v for k,v in enumerate(range(10))}
