@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Video!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div class="flex min-h-screen w-full flex-col bg-slate-900 text-white">
+        <header
+            class="sticky top-0 z-30 flex h-14 items-center gap-4 px-4 sm:static sm:h-auto sm:border-0 sm:bg-transparent sm:px-6 shadow shadow-emerald-600">
+            <nav aria-label="breadcrumb" class="hidden md:flex my-4">
+                <ol class="flex flex-wrap items-center gap-1.5 break-words text-sm text-muted-foreground sm:gap-2.5">
+                    <li class="inline-flex items-center gap-1.5">
+                        <span aria-current="page" aria-disabled="true" class="font-normal text-foreground" role="link">
+                            Dashboard
+                        </span>
+                    </li>
+                    <li aria-hidden="true" class="[&amp;>svg]:size-3.5" role="presentation">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-chevron-right">
+                            <path d="m9 18 6-6-6-6"></path>
+                        </svg>
+                    </li>
+                    <li class="inline-flex items-center gap-1.5">
+                        <span aria-current="page" aria-disabled="true" class="font-normal text-foreground" role="link">
+                            Subir video
+                        </span>
+                    </li>
+                </ol>
+            </nav>
+        </header>
+        <div class="flex flex-col sm:gap-4 sm:py-4 sm:pl-14">
+            <main class="grid flex-1 items-start gap-4 p-4 sm:px-6 sm:py-0 md:gap-8 lg:grid-cols-3 xl:grid-cols-3">
+                <div class="lg:col-span-2">
+                    <div class="rounded-lg border bg-card text-card-foreground shadow-sm" data-v0-t="card">
+                        <div class="flex flex-col space-y-1.5 p-6">
+                            <h3 class="whitespace-nowrap text-2xl font-semibold leading-none tracking-tight">Sube un nuevo video</h3>
+                        </div>
+                        <div class="p-6">
+                            <form class="grid gap-4" id="form">
+                                <div class="grid gap-2">
+                                    <label
+                                        class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                                        for="title">
+                                        Titulo
+                                    </label>
+                                    <input
+                                        class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                                        id="title" placeholder="Ingrese el titulo para el video" />
+                                </div>
+                                <div class="grid gap-2">
+                                    <label
+                                        class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                                        for="description">
+                                        Descripci&oacute;n
+                                    </label>
+                                    <textarea
+                                        class="flex min-h-[80px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                                        id="description" placeholder="Ingrese la descripción del video"
+                                        rows="4"></textarea>
+                                </div>
+                                <div class="grid gap-2">
+                                    <label
+                                        class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                                        for="tags">
+                                        Tags
+                                    </label>
+                                    <input
+                                        class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                                        id="tags" placeholder="Ingrese los tags del video (separados por commas)"/>
+                                </div>
+                                <button
+                                    class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-emerald-500 text-primary-foreground hover:bg-emerald-500/90 h-10 px-4 py-2 w-full"
+                                    type="submit">
+                                    Subir Video
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="rounded-lg border bg-card text-card-foreground shadow-sm" data-v0-t="card">
+                        <div class="flex flex-col space-y-1.5 p-6">
+                            <h3 class="whitespace-nowrap text-2xl font-semibold leading-none tracking-tight">Recomendaciones</h3>
+                            <p class="text-sm text-muted-foreground">Saca el maximo provecho a tu video</p>
+                        </div>
+                        <div class="p-6">
+                            <div dir="ltr" id="recomendaciones">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+<script src="{{url_for('static', filename='index.js')}}"></script>
+</html>
