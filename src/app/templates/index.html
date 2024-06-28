@@ -50,8 +50,8 @@
                                         Titulo
                                     </label>
                                     <input
-                                        class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                                        id="title" placeholder="Ingrese el titulo para el video" />
+                                        class="flex h-10 w-full rounded-md border border-input px-3 py-2 text-sm text-black ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                                        id="title" name="title" placeholder="Ingrese el titulo para el video" />
                                 </div>
                                 <div class="grid gap-2">
                                     <label
@@ -60,8 +60,8 @@
                                         Descripci&oacute;n
                                     </label>
                                     <textarea
-                                        class="flex min-h-[80px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                                        id="description" placeholder="Ingrese la descripción del video"
+                                        class="flex min-h-[80px] w-full rounded-md border border-input px-3 py-2 text-sm text-black ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                                        id="description" name="description" placeholder="Ingrese la descripción del video"
                                         rows="4"></textarea>
                                 </div>
                                 <div class="grid gap-2">
@@ -71,8 +71,37 @@
                                         Tags
                                     </label>
                                     <input
-                                        class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                                        id="tags" placeholder="Ingrese los tags del video (separados por commas)"/>
+                                        class="flex h-10 w-full rounded-md border border-input px-3 py-2 text-sm text-black ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                                        id="tags" name="tags" placeholder="Ingrese los tags del video (separados por commas)"/>
+                                </div>
+                                <div class="grid gap-2">
+                                    <label
+                                        class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                                        for="category_id">
+                                        Categoria
+                                    </label>
+                                    <select 
+                                        class="flex h-10 w-full rounded-md border border-input px-3 py-2 text-sm text-black ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                                        name="category_id" id="category_id">
+                                        <option value="Seleccionar">Seleccionar</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="10">10</option>
+                                        <option value="15">15</option>
+                                        <option value="17">17</option>
+                                        <option value="19">19</option>
+                                        <option value="20">20</option>
+                                        <option value="24">22</option>
+                                        <option value="24">24</option>
+                                        <option value="23">23</option>
+                                        <option value="27">27</option>
+                                        <option value="25">25</option>
+                                        <option value="26">26</option>
+                                        <option value="28">28</option>
+                                        <option value="29">29</option>
+                                        <option value="30">30</option>
+                                        <option value="43">43</option>
+                                    </select>
                                 </div>
                                 <button
                                     class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-emerald-500 text-primary-foreground hover:bg-emerald-500/90 h-10 px-4 py-2 w-full"
